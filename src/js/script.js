@@ -82,15 +82,19 @@ botaoBuscarNome.addEventListener('click', () => {
 
         let prodMaior = prod.nome.toLocaleUpperCase()
         let secaoMaior = prod.secao.toLocaleUpperCase()
+        let categoriaMaior = prod.categoria.toLocaleUpperCase()
         if (valorMaior == prodMaior) {
             montarListaProdutos([prod])
             
         }
-        if (valorMaior == secaoMaior) {
+       else if (valorMaior == secaoMaior) {
             montarListaProdutos([prod])
+            if(valor == "HORTIFRUTI"){
+                filtrarPorHortifruti()
+            }
         }
 
-        if (valorMaior == 'HORTIFRUTI') {
+        else if (valorMaior == categoriaMaior) {
             filtrarPorHortifruti()
         }
     })
